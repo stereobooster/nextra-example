@@ -7,7 +7,7 @@ export async function getStaticProps({ params }) {
   // const path = params.slug?.join('/') ?? 'index'
   // const foundPath = filePaths.find(filePath => filePath.replace(/\.mdx?/, '') === path)
   const data = `# Hello world`
-  // const { __nextra_pageMap } =  await buildDynamicMeta()
+  const { __nextra_pageMap } =  await buildDynamicMeta()
   const dynamicMdx = await buildDynamicMDX(data, { defaultShowCopyCode: true })
   return {
     props: {
