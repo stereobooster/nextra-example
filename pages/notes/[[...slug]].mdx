@@ -1,0 +1,27 @@
+import { Callout, RemoteContent } from 'nextra/components'
+import { buildDynamicMDX, buildDynamicMeta } from 'nextra/remote'
+
+export const filePaths = ['index.mdx', 'contact.mdx', 'about.mdx']
+
+export async function getStaticProps({ params }) {
+  // const path = params.slug?.join('/') ?? 'index'
+  // const foundPath = filePaths.find(filePath => filePath.replace(/\.mdx?/, '') === path)
+  const data = `# Hello world`
+  // const { __nextra_pageMap } =  await buildDynamicMeta()
+  const dynamicMdx = await buildDynamicMDX(data, { defaultShowCopyCode: true })
+  return {
+    props: {
+      // __nextra_pageMap,
+      ...dynamicMdx
+    }
+  }
+}
+ 
+export const getStaticPaths = () => ({
+  fallback: 'blocking',
+  paths: filePaths.map(filePath => ({
+    params: { slug: filePath.replace(/\.mdx?$/, '').split('/') }
+  }))
+})
+ 
+<RemoteContent components={{ Callout }} />
