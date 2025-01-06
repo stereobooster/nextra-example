@@ -3,10 +3,10 @@ import type { DocsThemeConfig } from "nextra-theme-docs";
 const config: DocsThemeConfig = {
   logo: <span>Nextra example</span>,
   project: {
-    link: "https://github.com/stereobooster/braindb",
+    link: "https://github.com/stereobooster/nextra-example",
   },
   docsRepositoryBase:
-    "https://github.com/stereobooster/braindb/tree/main/packages/nextra/",
+    "https://github.com/stereobooster/nextra-example/tree/main/",
   feedback: {
     content: null,
   },
