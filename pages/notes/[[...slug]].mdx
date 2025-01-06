@@ -11,7 +11,7 @@ export async function getStaticProps({ params }) {
   const dynamicMdx = await buildDynamicMDX(data, { defaultShowCopyCode: true })
   return {
     props: {
-      // __nextra_pageMap,
+      __nextra_pageMap,
       ...dynamicMdx
     }
   }
